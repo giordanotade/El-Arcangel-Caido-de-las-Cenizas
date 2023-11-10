@@ -1,50 +1,170 @@
-//alert("(Lee la historia que está debajo para entrar en este mundo de fantasía)")
-alert("El rey del enigma vive en un castillo con muchas puertas y habitaciones. Para llegar a él, debes encontrar la llave correcta que abre cada puerta. Detrás de cada puerta hay un acertijo o pista que te llevará a la siguiente llave. Usa tu ingenio para resolver los acertijos y avanzar a través del castillo...")
-alert("Rey enigma:saludos! aventurero veo que llegaste a mi castillo")
-alert("ahora entraras a mis acertijos, espero que estes preparado!")
-
+//Declaramos la cantidad de vidas que tenemos y el nivel por el que empezamos
 let vidas = 3;
+let nivel = 1;
+
+//Hacemos la función para empezar el juego
+function inicio() {
+  alert(
+    "El rey del enigma vive en un castillo con muchas puertas y habitaciones. Para llegar a él, debes encontrar la llave correcta que abre cada puerta. Detrás de cada puerta hay un acertijo o pista que te llevará a la siguiente llave. Usa tu ingenio para resolver los acertijos y avanzar a través del castillo..."
+  );
+  alert("Rey enigma: ¡Saludos aventurero! Veo que llegaste a mi castillo");
+  alert("Ahora responderás a mis acertijos, espero que estes preparado!");
+
+  juegoAcertijos();
+}
+
+//Variable que nos permitirá reconocer las respuestas correctas e incorrectas
+let respuestaUsuario = "";
+
+
+//Funciones de los niveles
+function nivel1() {
+  respuestaUsuario = prompt(acertijos[0].pregunta);
+  if (respuestaUsuario === acertijos[0].respuesta) {
+    alert("(Correcto)");
+    
+  } else {
+    alert("(Incorrecto)");
+    vidas -= 1;
+    if (vidas > 0) {
+      alert( `Te quedan ${vidas} vidas`)
+    } else {
+      perdiste();
+    }
+  }
+}
+
+function nivel2() {
+  respuestaUsuario = prompt(acertijos[1].pregunta);
+  if (respuestaUsuario === acertijos[1].respuesta) {
+    alert("(Correcto)");
+    nivel = 3;
+  } else {
+    alert("(Incorrecto)");
+    vidas -= 1;
+    if (vidas > 0) {
+      alert( `Te quedan ${vidas} vidas`);
+    } else {
+      perdiste();
+    }
+  }
+}
+
+function nivel3() {
+  respuestaUsuario = prompt(acertijos[2].pregunta);
+  if (respuestaUsuario === acertijos[2].respuesta) {
+    alert("(Correcto)");
+    dialogos2()
+  } else {
+    alert("(Incorrecto)");
+    vidas -= 1;
+    if (vidas > 0) {
+      alert( `Te quedan ${vidas} vidas`)
+    } else {
+      perdiste();
+    }
+  }
+}
+
+function dialogos2() {
+  alert(
+    "El rey enigma se sorprendio con tal fortaleza y determinacion para lograr esto"
+  );
+  alert(
+    "Felicidades por derrotarme aventurero pero tu siguiente desafio es alguien bien oculta en las profundas aguas del bosque"
+  );
+
+
+}
+
+function nivel4(){
+  respuestaUsuario = prompt(acertijos[3].pregunta);
+  if (respuestaUsuario === acertijos[3].respuesta){
+    alert('Correcto');
+    nivel = 6;
+  } else{
+    alert('Incorrecto');
+    vidas -= 1;
+    if (vidas > 0) {
+      alert(`Te quedan ${vidas} vidas`);
+      } else {
+      perdiste();
+    }
+  }
+}
+
+function nivel5(){
+}
+
+// Funciones de si ganas al primer jefe o pierdes
+function ganaste() {
+  vidas = 0;
+}
+
+function perdiste() {
+  alert("Game Over");
+}
+
+//Array donde guardamos las preguntas y acertijos en objetos
 
 const acertijos = [
   {
-    pregunta: "lo adivinas o te quedas con la duda en la cabez.Di ¿que es?",
-    respuesta: "un acertijo"
+    pregunta: "¿Lo adivinas o te quedas con la duda en la cabeza? Di qué es",
+    respuesta: "un acertijo",
   },
+
   {
-    pregunta: "sin alas vuelo, sin dientes muerdo,sin boca hablo ¿que soy?", 
-    respuesta: "el viento"
+    pregunta: "Sin alas vuelo, sin dientes muerdo, sin boca hablo ¿qué soy?",
+    respuesta: "el viento",
   },
+
   {
-    pregunta: "de metal soy y protejo tu humanidad,cubro tu cuerpo en a liza o en batalla ¿que parte de la armadura soy?",
-    respuesta: "la cota de malla" 
-  }
+    pregunta: "De metal soy y protejo tu humanidad, cubro tu cuerpo en a liza o en batalla ¿qué parte de la armadura soy?",
+    respuesta: "la cota de malla",
+  },
+
+  {
+    pregunta: "¿Quien me ayudó a salir del agua?",
+    respuesta: "mi hermano",
+  },
+
+  {
+    pregunta: "¿Cuantos dedos tiene una mano humana?",
+    respuesta: "5",
+  },
 ];
 
+//Switch en un do while que nos permitirá pasar al siguiente nivel o si perdemos o ganamos
 function juegoAcertijos() {
-
-    for(let i = 0; i < acertijos.length; i++) {
-  
-      const acertijo = acertijos[i];
-      
-      const respuestaUsuario = prompt(acertijo.pregunta);
-      
-      if(respuestaUsuario.toLowerCase() === acertijo.respuesta.toLowerCase()) {
-        console.log("¡Respuesta correcta!");
-      } else {
-        vidas--;
-        console.log(`Respuesta incorrecta. Te quedan ${vidas} vidas.`);
-        if(vidas === 0) {
-          console.log("Perdiste todas tus vidas. Fin del juego.");
-          break;
-        }
-      }
+  do {
+    switch (nivel) {
+      // Acertijos del 1er jefe
+      case 1:
+        nivel1();
+        break;
+      case 2:
+        nivel2();
+        break;
+      case 3:
+        nivel3();
+        break;
+      // Switch de ganar o perder
+      case 4:
+        ganaste();
+        break;
+      case 5:
+        perdiste();
+        break;
+      // Acertijos del 2er jefe
+      case 6:
+        nivel4();
+        break
+      case 7:
+        nivel5();
+        break
+      default:
+        console.log("error");
+        break;
     }
-    
-    if(vidas > 0) {
-      console.log("¡Ganaste!"); 
-    }
-  }
-  
-  juegoAcertijos();
-alert("el rey enigma se sorprendio con tal fortaleza y determinacion para lograr esto")
-alert("felicidades por derrotarme aventurero pero tu siguiente desafio es alguien bien oculta en las profundas aguas del bosque")
+  } while (vidas > 0);
+}

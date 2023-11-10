@@ -8,9 +8,9 @@
 </head>
 <body>
     <header>
-        <div class="menu">
+        <nav class="menu">
             <img src="assets/logo-juego.png" alt="">
-        </div>
+        </nav>
     </header>
     <main>
         <div class="lore">
@@ -23,11 +23,18 @@
 
         
         <div class="personajes">
-            <img src="assets/prota.jpeg">
-            <img src="assets/rey-ceniza.jpeg">
-            <img src="assets/rey-enigma.jpg">
-            <img src="assets/viuda-agua.jpeg">
+            <div class="heroe">
+                <img src="assets/prota.jpeg">
+            </div>
+            <div class="villanos">
+                <img src="assets/rey-ceniza.jpeg">
+                <img src="assets/rey-enigma.jpg">
+                <img src="assets/viuda-agua.jpeg">
+            </div>
         </div>
+        <nav class="container-boton">
+            <button class="boton" onclick="inicio()">INICIAR</button>
+        </nav>
     </main>
     <script src="js/script.js"></script>
 </body>
