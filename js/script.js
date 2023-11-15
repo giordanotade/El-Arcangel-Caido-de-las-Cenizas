@@ -18,54 +18,58 @@ let respuestaUsuario = "";
 
 
 //Funciones de los niveles
-function nivel1() {
-  respuestaUsuario = prompt(acertijos[0].pregunta);
-  if (respuestaUsuario === acertijos[0].respuesta) {
-    alert("(Correcto)");
-    nivel = 2
-  } else {
-    alert("(Incorrecto)");
-    vidas -= 1;
-    if (vidas > 0) {
-      alert( `Te quedan ${vidas} vidas`)
+
+function reyEnigma(){
+  function nivel1() {
+    respuestaUsuario = prompt(acertijos[0].pregunta);
+    if (respuestaUsuario === acertijos[0].respuesta) {
+      alert("(Correcto)");
+      nivel2()
     } else {
-      perdiste();
+      alert("(Incorrecto)");
+      vidas -= 1;
+      if (vidas > 0) {
+        alert( `Te quedan ${vidas} vidas`)
+      } else {
+        perdiste();
+      }
+    }
+  }
+
+  nivel1()
+
+  function nivel2() {
+    respuestaUsuario = prompt(acertijos[1].pregunta);
+    if (respuestaUsuario === acertijos[1].respuesta) {
+      alert("(Correcto)");
+      nivel3();
+    } else {
+      alert("(Incorrecto)");
+      vidas -= 1;
+      if (vidas > 0) {
+        alert( `Te quedan ${vidas} vidas`);
+      } else {
+        perdiste();
+      }
+    }
+  }
+
+  function nivel3() {
+    respuestaUsuario = prompt(acertijos[2].pregunta);
+    if (respuestaUsuario === acertijos[2].respuesta) {
+      alert("(Correcto)");
+      dialogos2()
+    } else {
+      alert("(Incorrecto)");
+      vidas -= 1;
+      if (vidas > 0) {
+        alert( `Te quedan ${vidas} vidas`)
+      } else {
+        perdiste();
+      }
     }
   }
 }
-
-function nivel2() {
-  respuestaUsuario = prompt(acertijos[1].pregunta);
-  if (respuestaUsuario === acertijos[1].respuesta) {
-    alert("(Correcto)");
-    nivel = 3;
-  } else {
-    alert("(Incorrecto)");
-    vidas -= 1;
-    if (vidas > 0) {
-      alert( `Te quedan ${vidas} vidas`);
-    } else {
-      perdiste();
-    }
-  }
-}
-
-function nivel3() {
-  respuestaUsuario = prompt(acertijos[2].pregunta);
-  if (respuestaUsuario === acertijos[2].respuesta) {
-    alert("(Correcto)");
-    dialogos2()
-  } else {
-    alert("(Incorrecto)");
-    vidas -= 1;
-    if (vidas > 0) {
-      alert( `Te quedan ${vidas} vidas`)
-    } else {
-      perdiste();
-    }
-  }
-}
-
 function dialogos2() {
   alert(
     "El rey enigma se sorprendio con tal fortaleza y determinacion tras lograr esto."
@@ -86,57 +90,58 @@ function dialogos2() {
     "Viuda de las Aguas: Ahora te enfrentarás a mí por medio de analogías. Veamos que tan 'elegido' eres..."
     )
 
-  nivel = 6
+  nivel = 2
 }
 
-function nivel4(){
-  respuestaUsuario = prompt(acertijos[3].pregunta);
-  if (respuestaUsuario === acertijos[3].respuesta){
-    alert('Correcto');
-    nivel = 7;
-  } else{
-    alert('Incorrecto');
-    vidas -= 1;
-    if (vidas > 0) {
-      alert(`Te quedan ${vidas} vidas`);
-      } else {
-      perdiste();
+function viudaDeLasAguas(){
+  function nivel1(){
+    respuestaUsuario = prompt(acertijos[3].pregunta);
+    if (respuestaUsuario === acertijos[3].respuesta){
+      alert('Correcto');
+      nivel2();
+    } else{
+      alert('Incorrecto');
+      vidas -= 1;
+      if (vidas > 0) {
+        alert(`Te quedan ${vidas} vidas`);
+        } else {
+        perdiste();
+      }
     }
   }
-}
 
-function nivel5(){
-  respuestaUsuario = prompt(acertijos[4].pregunta);
-  if (respuestaUsuario === acertijos[4].respuesta){
-    alert('Correcto');
-    nivel = 8;
-  } else{
-    alert('Incorrecto');
-    vidas -= 1;
-    if (vidas > 0) {
-      alert(`Te quedan ${vidas} vidas`);
-      } else {
-      perdiste();
+  function nivel2(){
+    respuestaUsuario = prompt(acertijos[4].pregunta);
+    if (respuestaUsuario === acertijos[4].respuesta){
+      alert('Correcto');
+      nivel3();
+    } else{
+      alert('Incorrecto');
+      vidas -= 1;
+      if (vidas > 0) {
+        alert(`Te quedan ${vidas} vidas`);
+        } else {
+        perdiste();
+      }
     }
   }
-}
-
-function nivel6(){
-  respuestaUsuario = prompt(acertijos[5].pregunta);
-  if (respuestaUsuario === acertijos[5].respuesta){
-    alert('Correcto');
-    dialogos3()
-  } else{
-    alert('Incorrecto');
-    vidas -= 1;
-    if (vidas > 0) {
-      alert(`Te quedan ${vidas} vidas`);
-      } else {
-      perdiste();
+  function nivel3(){
+    respuestaUsuario = prompt(acertijos[5].pregunta);
+    if (respuestaUsuario === acertijos[5].respuesta){
+      alert('Correcto');
+      dialogos3()
+    } else{
+      alert('Incorrecto');
+      vidas -= 1;
+      if (vidas > 0) {
+        alert(`Te quedan ${vidas} vidas`);
+        } else {
+        perdiste();
+      }
     }
   }
+  nivel1()
 }
-
 
 
 // Funciones de si ganas al primer jefe o pierdes
@@ -186,20 +191,19 @@ const acertijos = [
     respuesta: "encantamiento",
   }
 ];
-
 //Switch en un do while que nos permitirá pasar al siguiente nivel o si perdemos o ganamos
 function juegoAcertijos() {
   do {
     switch (nivel) {
       // Acertijos del 1er jefe
       case 1:
-        nivel1();
+        reyEnigma();
         break;
       case 2:
-        nivel2();
+        viudaDeLasAguas();
         break;
       case 3:
-        nivel3();
+        reyCeniza();
         break;
       // Switch de ganar o perder
       case 4:
@@ -208,19 +212,10 @@ function juegoAcertijos() {
       case 5:
         perdiste();
         break;
-      // Acertijos del 2do jefe
-      case 6:
-        nivel4();
-        break
-      case 7:
-        nivel5();
-        break
-      case 8:
-        nivel6();
-        break
       default:
         console.log("error");
         break;
     }
   } while (vidas > 0);
 }
+juegoAcertijos()
