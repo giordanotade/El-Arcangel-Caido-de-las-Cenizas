@@ -87,7 +87,11 @@ function dialogos2() {
   )
 
   alert(
-    "Viuda de las Aguas: Ahora te enfrentarás a mí por medio de analogías. Veamos que tan 'elegido' eres..."
+    "Viuda de las Aguas: Ahora te enfrentarás a mí por medio de algo que a mí me divierte... las analogías."
+    )
+
+  alert(
+    "Veamos que tan 'elegido' eres..."
     )
 
   nivel = 2
@@ -143,6 +147,8 @@ function viudaDeLasAguas(){
   nivel1()
 }
 
+function dialogos3(){
+}
 
 // Funciones de si ganas al primer jefe o pierdes
 function ganaste() {
