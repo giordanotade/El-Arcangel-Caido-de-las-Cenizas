@@ -7,17 +7,31 @@ function inicio() {
   alert(
     "(El rey del enigma vive en un castillo con muchas puertas y habitaciones. Para llegar a él, debes encontrar la llave correcta que abre cada puerta. Detrás de cada puerta hay un acertijo o pista que te llevará a la siguiente llave. Usa tu ingenio para resolver los acertijos y avanzar a través del castillo..."
   );
-  alert("Rey enigma: ¡Saludos aventurero! Veo que llegaste a mi castillo.");
-  alert("Rey Enigma: Ahora responderás a mis acertijos, ¡espero que estes preparado!");
+
+  alert(
+    "Rey enigma: ¿Y tu quién eres? ¿Acaso creés que puedes entrar a mis dominios así porque sí?"
+  );
+
+  alert(
+    "Rey enigma: Ohhhh, creo que ya sé quién eres... Eres el popular héroe; todo el mundo te conoce a estas alturas. ¡Qué tonto que soy! ¿Cómo no te reconocí...?"
+  );
+
+  alert(
+    "Rey enigma: En fin, si estás aquí, en mis dominios, debe ser porque quieres ganar y adivinar mis acertijos... Desde ya te digo que no será fácil y dudo que puedas hacerlo"
+  );
+
+  alert(
+    "Rey Enigma: Preparate... porque si no, no me quiero aburrir."
+  );
 
   juegoAcertijos();
 }
 
-//Variable que nos permitirá reconocer las respuestas correctas e incorrectas
+//Variable que nos permitirá reconocer e identificar las respuestas correctas e incorrectas
 let respuestaUsuario = "";
 
 
-//Funciones de los niveles
+//Funciones de los niveles y de los diálogos
 
 function reyEnigma(){
   function nivel1() {
@@ -72,6 +86,9 @@ function reyEnigma(){
 }
 function dialogos2() {
   alert(
+    "(Wow, no eres tan inútil después de todo)"
+  )
+  alert(
     "El rey enigma se sorprendio con tal fortaleza y determinacion tras lograr esto."
   );
   alert(
@@ -83,15 +100,27 @@ function dialogos2() {
   )
 
   alert(
-    "Viuda de las Aguas: ¿Con que eres el conocido 'elegido'? Pues yo soy la Viuda de las Aguas."
+    "Días más tarde..."
   )
 
   alert(
-    "Viuda de las Aguas: Ahora te enfrentarás a mí por medio de algo que a mí me divierte... las analogías."
+    "Viuda de las Aguas: ¿Quién eres? ¿Y qué haces aquí? ¡Vete! Antes de que salgas herido..."
+  )
+
+  alert(
+    "Viuda de las Aguas: Espera... me suenas algo familiar.... ¿Acaso eres el conocido héroe?... Jajaja"
+  )
+
+  alert(
+    "Viuda de las Aguas: Entonces me tendré que presentar... yo soy... la 'Viuda de las Aguas'."
+  )
+
+  alert(
+    "Viuda de las Aguas: Ahora te enfrentarás conmigo por medio de algo que desde que yo era humana me han divertido... las analogías."
     )
 
   alert(
-    "Veamos que tan 'elegido' eres..."
+    "Viuda de las Aguas: Veamos que tan 'héroe' eres..."
     )
 
   nivel = 2
@@ -148,6 +177,49 @@ function viudaDeLasAguas(){
 }
 
 function dialogos3(){
+  alert(
+    "(¡Vaya! No pensé que la derrotarías)"
+    )
+  alert(
+    "Viuda de las Aguas: Con que sí eres un héroe, me has sorprendido. En fin..."
+    )
+  alert(
+    "Viuda de las Aguas: Tu último pero no menos importante enemigo se encuentra a través de aquel sendero. Si sigues ese camino, pronto habrás llegado al paradero de tu último enemigo... 'El Rey de las Cenizas'"
+    )
+  alert(
+    "Viuda de las Aguas: Bueno, ya te he dicho todo, ¡ahora lárgate! ¡y no quiero verte de nuevo!"
+  )
+
+  alert(
+    "(Hazle caso a la viuda y continúa por ese sendero. Luego me agradeces...)"
+  )
+
+  alert(
+    "El protagonista comenzó su recorrido y días después... llegó."
+  )
+
+  alert(
+    "Extraño: ¡Al fin llegas héroe!. Te reconocí a pocos kilómetros de aquí"
+  )
+
+  alert(
+    "Extraño: Oh, aún no me presentado; que mala educación la mía... ¿Dónde están mis modales?"
+  )
+
+  alert(
+    "Rey de las Cenizas: Yo, soy... El Rey de Las Cenizas. El enemigo que has estado esperando y por el cual tú has transitado todo este camino... Desde el Rey Enigma, la Viuda de las Aguas... ¡hasta llegar a mí!"
+  )
+
+  alert(
+    "Rey de las Cenizas: Ahh, seguro te preguntarás... '¿Cómo sabe quién soy?' '¿Cómo sabe todo el camino que he recorrido?'. Bueno... pues yo te vigilado desde siempre, además de ser la voz en tu cabeza que te decía por dónde tenías que ir"
+  )
+
+  alert(
+    "Rey de las Cenizas: Sorprendente... ¿no crees?"
+  )
+}
+function reyCeniza(){
+
 }
 
 // Funciones de si ganas al primer jefe o pierdes
@@ -197,7 +269,7 @@ const acertijos = [
     respuesta: "encantamiento",
   }
 ];
-//Switch en un do while que nos permitirá pasar al siguiente nivel o si perdemos o ganamos
+//Switch en un do while que nos permitirá pasar al siguiente nivel o si perdemos
 function juegoAcertijos() {
   do {
     switch (nivel) {
