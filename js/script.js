@@ -34,7 +34,6 @@ let respuestaUsuario = "";
 //Funciones de los niveles y de los diálogos
 
 function reyEnigma(){
-  function nivel1() {
     respuestaUsuario = prompt(acertijos[0].pregunta);
     if (respuestaUsuario === acertijos[0].respuesta) {
       alert("(Correcto)");
@@ -49,8 +48,6 @@ function reyEnigma(){
       }
     }
   }
-
-  nivel1()
 
   function nivel2() {
     respuestaUsuario = prompt(acertijos[1].pregunta);
@@ -83,7 +80,6 @@ function reyEnigma(){
       }
     }
   }
-}
 function dialogos2() {
   alert(
     "(Wow, no eres tan inútil después de todo)"
@@ -127,7 +123,6 @@ function dialogos2() {
 }
 
 function viudaDeLasAguas(){
-  function nivel1(){
     respuestaUsuario = prompt(acertijos[3].pregunta);
     if (respuestaUsuario === acertijos[3].respuesta){
       alert('Correcto');
@@ -173,8 +168,6 @@ function viudaDeLasAguas(){
       }
     }
   }
-  nivel1()
-}
 
 function dialogos3(){
   alert(
@@ -296,4 +289,3 @@ function juegoAcertijos() {
     }
   } while (vidas > 0);
 }
-juegoAcertijos()

@@ -51,6 +51,7 @@ h2{
 }
 
 .villanos {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -60,7 +61,19 @@ h2{
 .personajes  img{
     width: 230px;
     border-radius: 15px;
-    box-shadow: 1em 0 3em black;
+    box-shadow: 0em 0 1.5em black;
+}
+
+.img-villanos{
+    cursor: pointer;
+    transition: all 0.25s;  
+}
+
+.img-villanos:hover{
+    color: black;
+    background-color: rgb(190, 190, 190);
+    transform: translateY(-35px);
+    box-shadow: 0em 2em 2em black;
 }
 
 .container-boton{
